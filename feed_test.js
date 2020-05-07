@@ -1,6 +1,6 @@
 import { Selector } from "testcafe";
 
-fixture("TeamYap Login")
+fixture("TeamYap Feed")
   .page("https://teamyap.app/login");
 
 test("Logged-in user can create new feed post", async t => {
