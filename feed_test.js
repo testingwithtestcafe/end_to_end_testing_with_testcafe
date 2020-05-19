@@ -1,14 +1,20 @@
 import { Selector } from "testcafe";
 
 fixture("TeamYap Feed")
-  .page("https://teamyap.app/login");
+  .page("https://teamyap.app/login")
+  .beforeEach(async t => {
+    await t
+      .typeText("#email", "dennis@dennmart.com")
+      .typeText("#password", "teamyap123")
+      .click("#login_submit");
+  })
+  .afterEach(async t => {
+    await t
+      .navigateTo("https://teamyap.app/admin/manage_data")
+      .click("#delete_feed_data_btn");
+  });
 
 test("Logged-in user can create new feed post", async t => {
-  await t
-    .typeText("#email", "dennis@dennmart.com")
-    .typeText("#password", "teamyap123")
-    .click("#login_submit");
-
   await t
     .typeText("#new_post_textarea", "Welcome to TeamYap!")
     .click("#new_post_submit");
@@ -19,11 +25,6 @@ test("Logged-in user can create new feed post", async t => {
 });
 
 test("Logged-in user can comment on feed post", async t => {
-  await t
-    .typeText("#email", "dennis@dennmart.com")
-    .typeText("#password", "teamyap123")
-    .click("#login_submit");
-
   await t
     .typeText("#new_post_textarea", "Can someone leave a comment?")
     .click("#new_post_submit");
