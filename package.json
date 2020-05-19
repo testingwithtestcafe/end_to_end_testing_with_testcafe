@@ -1,0 +1,22 @@
+{
+  "name": "end_to_end_testing_with_testcafe",
+  "version": "1.0.0",
+  "description": "Tests used in the End-to-End Testing with TestCafe book",
+  "main": "login_test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/testingwithtestcafe/end_to_end_testing_with_testcafe.git"
+  },
+  "author": "Dennis Martinez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/testingwithtestcafe/end_to_end_testing_with_testcafe/issues"
+  },
+  "homepage": "https://github.com/testingwithtestcafe/end_to_end_testing_with_testcafe#readme",
+  "dependencies": {
+    "testcafe": "^1.8.4"
+  }
+}
