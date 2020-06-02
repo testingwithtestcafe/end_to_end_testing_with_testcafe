@@ -1,4 +1,5 @@
-import { Selector } from "testcafe";
+import feedPageModel from "./models/feed_page_model";
+import manageDataPageModel from "./models/manage_data_page_model";
 import { adminUser } from "./helpers/roles";
 
 fixture("TeamYap Feed")
@@ -9,35 +10,27 @@ fixture("TeamYap Feed")
   .afterEach(async t => {
     await t
       .navigateTo("https://teamyap.app/admin/manage_data")
-      .click("#delete_feed_data_btn");
+      .click(manageDataPageModel.deleteFeedDataButton);
   });
 
 test("Logged-in user can create new feed post", async t => {
-  await t
-    .typeText("#new_post_textarea", "Welcome to TeamYap!")
-    .click("#new_post_submit");
+  await feedPageModel.createNewPost("Welcome to TeamYap!");
 
   await t
-    .expect(Selector("#feed_posts").nth(0).innerText)
+    .expect(feedPageModel.firstFeedPost.innerText)
     .contains("Welcome to TeamYap!");
 });
 
 test("Logged-in user can comment on feed post", async t => {
-  await t
-    .typeText("#new_post_textarea", "Can someone leave a comment?")
-    .click("#new_post_submit");
-
-  const postSelector = Selector("#feed_posts").nth(0);
+  await feedPageModel.createNewPost("Can someone leave a comment?");
 
   await t
-    .expect(postSelector.innerText)
+    .expect(feedPageModel.firstFeedPost.innerText)
     .contains("Can someone leave a comment?");
 
-  await t
-    .typeText(postSelector.find(".new-comment-textarea"), "Here's a comment!")
-    .click(postSelector.find(".new-comment-submit"));
+  await feedPageModel.createNewComment("Here's a comment!");
 
   await t
-    .expect(postSelector.find(".feed-post-comments").innerText)
+    .expect(feedPageModel.postComments.innerText)
     .contains("Here's a comment!");
 });
