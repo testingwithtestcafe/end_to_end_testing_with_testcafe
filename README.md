@@ -20,3 +20,4 @@ For more information about the book, go to [https://testingwithtestcafe.com/](ht
 - [Chapter 4](https://github.com/testingwithtestcafe/end_to_end_testing_with_testcafe/tree/chapter-4)
 - [Chapter 5](https://github.com/testingwithtestcafe/end_to_end_testing_with_testcafe/tree/chapter-5)
 - [Chapter 6](https://github.com/testingwithtestcafe/end_to_end_testing_with_testcafe/tree/chapter-6)
+- [Chapter 7](https://github.com/testingwithtestcafe/end_to_end_testing_with_testcafe/tree/chapter-7)
