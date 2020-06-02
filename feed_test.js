@@ -1,12 +1,10 @@
 import { Selector } from "testcafe";
+import { adminUser } from "./helpers/roles";
 
 fixture("TeamYap Feed")
-  .page("https://teamyap.app/login")
+  .page("https://teamyap.app/feed")
   .beforeEach(async t => {
-    await t
-      .typeText("#email", "dennis@dennmart.com")
-      .typeText("#password", "teamyap123")
-      .click("#login_submit");
+    await t.useRole(adminUser);
   })
   .afterEach(async t => {
     await t
