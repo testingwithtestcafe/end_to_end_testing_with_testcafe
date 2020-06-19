@@ -3,7 +3,7 @@ import adminQuestionsModel from "./models/admin_questions_model";
 import manageDataPageModel from "./models/manage_data_page_model";
 import { adminUser, regularUser } from "./helpers/roles";
 
-fixture("TeamYap Adminstrator sections")
+fixture("TeamYap Administrator sections")
   .page("https://teamyap.app/feed");
 
 test("TeamYap admin can see admin sections on the sidebar", async t => {
