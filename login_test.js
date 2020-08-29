@@ -10,7 +10,7 @@ test
   ("User with valid account can log in", async (t) => {
     await loginPageModel.submitLoginForm(
       "dennis@dennmart.com",
-      "teamyap123"
+      process.env.ADMIN_PASSWORD
     );
 
     await t
