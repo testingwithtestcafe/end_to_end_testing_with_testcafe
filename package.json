@@ -4,7 +4,13 @@
   "description": "Tests used in the End-to-End Testing with TestCafe book",
   "main": "login_test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:chrome": "testcafe chrome *_test.js",
+    "test:chrome:headless": "testcafe chrome:headless *_test.js",
+    "test:firefox": "testcafe firefox *_test.js",
+    "test:firefox:headless": "testcafe firefox:headless *_test.js",
+    "test:edge": "testcafe edge *_test.js",
+    "test:edge:headless": "testcafe edge:headless *_test.js",
+    "test:safari": "testcafe safari *_test.js"
   },
   "repository": {
     "type": "git",
